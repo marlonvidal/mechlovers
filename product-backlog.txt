@@ -1,0 +1,261 @@
+docker
+react
+.net core 2.0 (web api with swagger)
+oauth2
+mysql
+nginx
+redis
+rabbitmq
+microservices
+ddd
+jenkins
+xUnit
+jasmine
+google cloud
+sendgrid
+api gateway (ocelot)
+
+
+crm para oficinas mecanicas
+
+- front: permite clientes se logarem e acompanhar informacoes dos seus veiculos, tal como acesso a portal de beneficios do clube de descontos, historico de revisoes, valor gasto e programas de recompensa.
+depois de cada visita, o cliente pode participar da pesquisa de satisfacao pelos servicos, para identificar o nps
+- back: permite usuario fazer lancamentos de servicos, cadastrar parceiros e comunicar com os clientes em datas especificas, a partir da visita ao estabelecimento
+
+Product backlog
+admin
+
+- admin deve ter niveis de permissoes diferentes (admin, operador)
+- admin deve poder cadastrar novos clientes
+- admin/operador deve realizar lancamentos de ordens de servico
+- admin/operador deve realizar cadastro de clientes
+- admin/operador deve realizar cadastro de veiculos (carros/motos/caminhoes)
+- admin/operador deve realizar cadastro de itens do conserto
+- admin deve realizar cadastro de parceiros
+- admin deve visualizar metricas de engajamentos dos disparos feitos
+- admin/operador deve visualizar proximos agendamentos
+- admin deve visualizar clientes que nao vao a oficina a X periodo de tempo
+- admin pode enviar mensagens personalizadas para clientes especificos
+- admin pode marcar recebimento/pagamento de comissao a parceiros
+- admin pode cadastrar programas de fidelidade para cliente
+- admin/operador pode visualizar servicos ja realizados pelo cliente
+
+sistema
+- sistema deve notificar clientes sobre agendamento proximo da data
+- sistema deve notificar clientes que a proxima revisao eh gratuita
+- sistema deve notificar clientes que podem usar servicos de parceiros
+- sistema deve notificar clientes para preencher o nps da oficina
+
+cliente
+
+- cliente pode realizar o agendamento da sua proxima revisao
+- cliente pode visualizar historico de servicos realizados na oficina
+- cliente pode iniciar uma conversa atraves do chat da empresa
+
+parceiro
+
+- parceiro deve fazer login na plataforma
+- parceiro deve conseguir visualizar clientes que podem usar os seus servicos
+- parceiro deve conseguir visualizar valor a receber de comissao para a oficina
+- parceiro deve conseguir visualizar valor a pagar de comissao para a oficina
+
+
+usuario
+- id
+- id_perfil_acesso
+- nome
+- email
+- senha
+- ativo 
+
+funcionario
+- id
+- nome
+- telefone
+- cargo
+- ativo
+
+perfil_acesso
+- id
+- tipo
+- descricao
+
+agendamento
+- id
+- id_cliente
+- data_agendamento
+- compareceu
+- responsavel_atualizacao
+- data_atualizacao
+
+notificacao
+- id
+- remetente
+- destinatario
+- assunto
+- conteudo
+- processado
+
+cliente
+- id
+- nome
+- cpf_cnpj
+- rg
+- data_nascimento
+- tipo_pessoa
+- {n emails}
+- {n telefones}
+- {n enderecos}
+- {n veiculos}
+
+parceiro
+- id
+- nome
+- email
+- senha
+- ativo
+
+item_convenio
+- id
+- id_parceiro
+- descricao
+- valor_desconto
+- percentual_desconto
+
+cliente_convenio
+id
+id_cliente
+id_item_convenio
+codigo_promocional
+utilizado
+
+ordem_servico
+- id
+- id_cliente
+- id_mecanico
+- id_situacao_ordem_servico
+- valor_servico
+- valor_peca
+- valor_desconto
+- valor_impostos
+- valor_final
+- qtd_parcelas
+- data_criacao
+- data_finalizacao
+- nps
+- obs
+
+sistema
+- nome
+- endereco
+- telefone
+- whatsapp
+- email
+- cnpj
+
+pagamento
+- id
+- id_ordem_servico
+- data_vencimento
+- data_pagamento
+- valor_parcela
+- pagamento_quitado
+
+situacao_ordem_servico
+- id
+- tipo
+- descricao
+ * orcamento
+ * iniciado
+ * cancelado
+ * finalizado
+
+ordem_servico_peca
+- id
+- id_ordem_servico
+- id_peca
+- id_servico
+
+forma_pagamento
+- id
+- nome
+- descricao
+ * a vista
+ * cartao de credito
+ * cartao de debito
+ * permuta
+
+produto
+- id
+- id_unidade_medida
+- referencia
+- nome
+- valor
+- obs
+
+servico
+- id
+- referencia
+- nome
+- valor
+- obs
+
+unidade_medida
+- id
+- nome
+- descricao
+
+veiculo
+- id
+- id_tipo_veiculo
+- id_modelo
+- marca
+- placa
+- combustivel
+- portas
+
+marca
+- id
+- nome
+
+modelo
+- id
+- id_marca
+- nome
+
+tipo_veiculo
+- id
+- tipo
+- descricao
+
+cliente_endereco
+- id
+- id_cliente
+- tipo
+- logradouro
+- numero
+- bairro
+- complemento
+- id_cidade
+
+cidade
+- id
+- id_estado
+- nome
+
+estado
+- id
+- sigla
+- descricao
+
+cliente_email
+- id
+- id_cliente
+- email
+
+cliente_telefone
+- id
+- id_cliente
+- ddd
+- numero
+- tipo
