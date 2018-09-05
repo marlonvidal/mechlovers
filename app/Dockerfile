@@ -1,5 +1,5 @@
-FROM microsoft/aspnetcore-build:lts as backend
-COPY . /app
+FROM microsoft/aspnetcore-build:lts as webapi-cliente
+COPY ./src/backend/MechLovers.WebApi.Cliente /app
 WORKDIR /app
 RUN ["dotnet", "restore"]
 RUN ["dotnet", "build"]
