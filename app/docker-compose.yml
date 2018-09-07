@@ -1,27 +1,39 @@
 version: "3"
 services:
     usuario.api:
-        image: usuario.api
+        image: mechlovers/usuario.api
         container_name: usuario.api
         build:
             context: .
-            dockerfile: app/src/backend/services/usuario.api/Dockerfile
+            dockerfile: /src/backend/services/usuario.api/Dockerfile
         ports:
-            - "8081:80"
-        volumes:
-            app/src/backend/services/usuario.api:/app
+            - "8081:3000"
         links:
-            - db
+            - sql.data
         depends_on:
-            - db
-    db:
-        image: "mysql:8"
+            - sql.data
+            - rabbitmq
+    sql.data:
+        image: mechlovers/mysql
         container_name: mysql
+        build:
+            context: .
+            dockerfile: /src/database/Dockerfile
+        environment:            
+            - MYSQL_USER=mechlovers
+            - MYSQL_PASSWORD=mechlovers
+            - MYSQL_ROOT_PASSWORD=supersecret
         ports:
             - 3306:3306        
-        volumes:
-            - app/src/backend/database:/var/lib/mysql
-        environment:        
-            MYSQL_USER: "mechlovers"
-            MYSQL_PASSWORD: "mechlovers"    
-            MYSQL_ROOT_PASSWORD: "admin"
+    
+    nosql.data:
+        image: mongo
+        container_name: mongo
+    
+    cache.store:
+        image: memcached
+        container_name: memcached
+
+    rabbitmq:
+        image: rabbitmq:3-management-alpine
+        container_name: rabbitmq

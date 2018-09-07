@@ -9,9 +9,10 @@ Vagrant.configure(2) do |config|
   # Every Vagrant development environment requires a box. You can search for
   # boxes at https://atlas.hashicorp.com/search.
   # an alternative to this Ubuntu 14.04 box is the "v0rtex/xenial64" with the 16.04 LTS
-  config.vm.box = "centos/7" 
+  config.vm.box = "ubuntu/trusty64" 
   # access a port on your host machine (via localhost) and have all data forwarded to a port on the guest machine.
   config.vm.network "forwarded_port", guest: 9092, host: 9092
+  config.vm.network "forwarded_port", guest: 3306, host: 3306
   # Create a private network, which allows host-only access to the machine
   # using a specific IP.
   config.vm.network "private_network", ip: "192.168.188.111"
