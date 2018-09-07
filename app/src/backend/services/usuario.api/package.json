@@ -1,0 +1,22 @@
+{
+  "name": "mechlovers.usuario.api",
+  "version": "1.0.0",
+  "description": "API para operacoes relativas ao usuario do sistema",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Marlon Vidal",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.18.3",
+    "consign": "^0.1.6",
+    "express": "^4.16.3",
+    "express-validator": "^5.3.0"
+  },
+  "devDependencies": {
+    "eslint": "^5.5.0",
+    "eslint-config-strongloop": "^2.1.0",
+    "jasmine": "^3.2.0"
+  }
+}
