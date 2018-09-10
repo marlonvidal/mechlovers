@@ -1,0 +1,23 @@
+{
+  "development": {
+    "username": "mechlovers",
+    "password": "mechlovers",
+    "database": "mechlovers_usuarios",
+    "host": "localhost",
+    "dialect": "mysql"
+  },
+  "test": {
+    "username": "mechlovers",
+    "password": "mechlovers",
+    "database": "mechlovers_usuarios",
+    "host": "localhost",
+    "dialect": "mysql"
+  },
+  "production": {
+    "username": "mechlovers",
+    "password": "mechlovers",
+    "database": "mechlovers_usuarios",
+    "host": "localhost",
+    "dialect": "mysql"
+  }
+}

@@ -1,6 +1,6 @@
 docker
 react
-.net core 2.0 (web api with swagger)
+nodejs (web api with swagger)
 oauth2
 mysql
 nginx

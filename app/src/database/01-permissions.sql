@@ -1,0 +1,1 @@
+GRANT ALL PRIVILEGES ON 'mechlovers_usuarios.*' TO 'mechlovers'@'localhost'
