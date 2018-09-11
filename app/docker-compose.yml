@@ -7,12 +7,13 @@ services:
             context: .
             dockerfile: /src/backend/services/usuario.api/Dockerfile
         ports:
-            - "8081:3000"
+            - "9001:3000"
         links:
             - sql.data
         depends_on:
             - sql.data
             - rabbitmq
+            
     sql.data:
         image: mechlovers/mysql
         container_name: mysql
@@ -24,7 +25,7 @@ services:
             - MYSQL_PASSWORD=mechlovers
             - MYSQL_ROOT_PASSWORD=supersecret
         ports:
-            - 3306:3306        
+            - 3306:3306    
     
     nosql.data:
         image: mongo

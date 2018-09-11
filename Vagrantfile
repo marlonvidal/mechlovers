@@ -30,6 +30,6 @@ Vagrant.configure(2) do |config|
   # set up Docker in the new VM:
   config.vm.provision :docker
   # install docker-compose into the VM and run the docker-compose.yml file - if it exists -  whenever the  VM starts (https://github.com/leighmcculloch/vagrant-docker-compose)
-  config.vm.provision :docker_compose#, yml: "/vagrant/docker-compose.yml", run:"always"
+  config.vm.provision :docker_compose#, yml: "/vagrant/app/docker-compose.yml", run:"always"
 	
 end
