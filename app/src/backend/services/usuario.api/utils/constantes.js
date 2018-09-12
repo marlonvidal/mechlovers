@@ -1,10 +1,9 @@
-module.exports = function () {
-    let item = {};
-    item.perfilAcesso = {};
-    item.perfilAcesso.ADMIN = 'ADMIN';
-    item.perfilAcesso.OPERADOR = 'OPERADOR';
-
-    return {
-        perfilAcesso: item.perfilAcesso
-    };
+module.exports =  {
+    perfilAcesso: {
+        ADMIN: 'ADMIN',
+        OPERADOR: 'OPERADOR'
+    },
+    seguranca: {
+        saltRounds: 12
+    }
 }

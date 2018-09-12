@@ -5,7 +5,8 @@ module.exports = (sequelize, DataTypes) => {
     tipo: DataTypes.STRING,
     descricao: DataTypes.STRING
   }, {
-    tableName: "perfil_acesso"
+    tableName: "perfil_acesso",
+    timestamps: false
   });
   PerfilAcesso.associate = function(models) {
     // associations can be defined here

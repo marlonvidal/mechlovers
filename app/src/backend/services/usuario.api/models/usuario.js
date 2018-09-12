@@ -8,10 +8,15 @@ module.exports = (sequelize, DataTypes) => {
     senha: DataTypes.STRING,
     ativo: DataTypes.BOOLEAN
   }, {
-    tableName: "Usuario"
+    tableName: "usuario",
+    timestamps: false
   });
   Usuario.associate = function(models) {
-    // associations can be defined here
+    let idPerfilAcesso = {
+        foreignKey: 'id_perfil_acesso'
+    };
+
+    Usuario.hasOne(models.PerfilAcesso, idPerfilAcesso);
   };
   return Usuario;
 };
