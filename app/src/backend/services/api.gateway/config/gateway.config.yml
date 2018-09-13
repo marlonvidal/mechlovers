@@ -7,9 +7,14 @@ apiEndpoints:
   api:
     host: localhost
     paths: '/ip'
+  usuario_api:
+    host: usuario_api
+    paths: '/usuario'
 serviceEndpoints:
   httpbin:
     url: 'https://httpbin.org'
+  usuario_api:
+    url: 'http://usuario.api:3000/usuario/1'
 policies:
   - basic-auth
   - cors
@@ -20,6 +25,14 @@ policies:
   - proxy
   - rate-limit
 pipelines:
+  usuarioApi:
+    apiEndpoints:
+      - usuario_api
+    policies:
+      - proxy:
+          - action:
+              serviceEndpoint: usuario_api 
+              changeOrigin: true
   default:
     apiEndpoints:
       - api

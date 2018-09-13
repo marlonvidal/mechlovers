@@ -4,7 +4,7 @@
   "description": "API para operacoes relativas ao usuario do sistema",
   "main": "index.js",
   "scripts": {
-    "start": "nodemon index.js",
+    "start": "node index.js",
     "test": "sequelize db:seed:undo:all && sequelize db:migrate:undo:all && sequelize db:migrate && sequelize db:seed:all"
   },
   "author": "Marlon Vidal",
