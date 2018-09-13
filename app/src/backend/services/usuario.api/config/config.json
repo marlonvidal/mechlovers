@@ -6,21 +6,21 @@
     "username": "mechlovers",
     "password": "mechlovers",
     "database": "mechlovers_usuarios",
-    "host": "localhost",
+    "host": "sql.data",
     "dialect": "mysql"
   },
   "test": {
     "username": "mechlovers",
     "password": "mechlovers",
     "database": "mechlovers_usuarios",
-    "host": "localhost",
+    "host": "sql.data",
     "dialect": "mysql"
   },
   "production": {
     "username": "mechlovers",
     "password": "mechlovers",
     "database": "mechlovers_usuarios",
-    "host": "localhost",
+    "host": "sql.data",
     "dialect": "mysql"
   }
 }
