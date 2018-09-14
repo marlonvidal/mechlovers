@@ -41,9 +41,9 @@ services:
         container_name: mysql
         build:
             context: .
-            dockerfile: /src/database/sql.data/Dockerfile
+            dockerfile: /src/database/sql.data/config/Dockerfile
         volumes:
-            - ./src/database/sql.data:/var/lib/mysql
+            - ./src/database/sql.data/db:/var/lib/mysql
         environment:            
             - MYSQL_ROOT_PASSWORD=supersecret
         ports:

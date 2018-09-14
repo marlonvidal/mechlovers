@@ -1,8 +1,5 @@
 # mysqldata-docker
-!app/src/database/sql.data/Dockerfile
-!app/src/database/sql.data/00-script.sql
-!app/src/database/sql.data/01-permissions.sql
-app/src/database/sql.data/*
+app/src/database/sql.data/db
 
 # Logs
 logs
