@@ -4,8 +4,8 @@
   "description": "API para operacoes relativas ao usuario do sistema",
   "main": "index.js",
   "scripts": {
-    "start": "node index.js",
-    "test": "sequelize db:seed:undo:all && sequelize db:migrate:undo:all && sequelize db:migrate && sequelize db:seed:all"
+    "start": "sleep 10 && sequelize db:migrate && sequelize db:seed:all && nodemon index.js --legacy-watch",
+    "test": "exit 0"
   },
   "author": "Marlon Vidal",
   "license": "ISC",

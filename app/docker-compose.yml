@@ -7,14 +7,14 @@ services:
             context: .
             dockerfile: /src/backend/services/usuario.api/Dockerfile
         volumes:
-            - /src/backend/services/usuario.api:/app
+            - ./src/backend/services/usuario.api:/app
         ports:
             - "15002:3000"
+        depends_on:
+            - sql.data                
+            - rabbitmq
         links:
             - sql.data
-        depends_on:
-            - sql.data
-            - rabbitmq
         networks:
             - mechlovers_network
 
@@ -25,13 +25,13 @@ services:
             context: .
             dockerfile: /src/backend/services/api.gateway/Dockerfile
         volumes:
-            - /src/backend/services/api.gateway:/app
+            - ./src/backend/services/api.gateway:/app
         ports:
             - "15000:8080"
             - "15001:9876"
-        links:
-            - usuario.api
         depends_on:
+            - usuario.api
+        links:
             - usuario.api
         networks:
             - mechlovers_network
@@ -41,10 +41,10 @@ services:
         container_name: mysql
         build:
             context: .
-            dockerfile: /src/database/Dockerfile
+            dockerfile: /src/database/sql.data/Dockerfile
+        volumes:
+            - ./src/database/sql.data:/var/lib/mysql
         environment:            
-            - MYSQL_USER=mechlovers
-            - MYSQL_PASSWORD=mechlovers
             - MYSQL_ROOT_PASSWORD=supersecret
         ports:
             - 3306:3306    

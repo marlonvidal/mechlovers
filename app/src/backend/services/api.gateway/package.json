@@ -6,7 +6,7 @@
   "version": "1.0.0",
   "main": "server.js",
   "scripts": {
-    "start": "node server.js"
+    "start": "nodemon server.js --legacy-watch"
   },
   "dependencies": {
     "express-gateway": "^1.12.0"
