@@ -1,6 +1,10 @@
 # mysqldata-docker
 app/src/database/sql.data/db
 
+#vs
+.vs
+.vscode
+
 # Logs
 logs
 *.log
