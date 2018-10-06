@@ -5,7 +5,7 @@ services:
         container_name: usuario.api
         build:
             context: .
-            dockerfile: /src/backend/services/usuario.api/Dockerfile
+            dockerfile: ./src/backend/services/usuario.api/Dockerfile
         volumes:
             - ./src/backend/services/usuario.api:/app
         ports:
@@ -23,7 +23,7 @@ services:
         container_name: api.gateway
         build:
             context: .
-            dockerfile: /src/backend/services/api.gateway/Dockerfile
+            dockerfile: ./src/backend/services/api.gateway/Dockerfile
         volumes:
             - ./src/backend/services/api.gateway:/app
         ports:
@@ -41,7 +41,7 @@ services:
         container_name: mysql
         build:
             context: .
-            dockerfile: /src/database/sql.data/config/Dockerfile
+            dockerfile: ./src/database/sql.data/config/Dockerfile
         volumes:
             - ./src/database/sql.data/db:/var/lib/mysql
         environment:            
